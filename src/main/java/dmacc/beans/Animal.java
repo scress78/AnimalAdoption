@@ -14,7 +14,8 @@ public class Animal {
 	public String name;
 	public String breed;
 	public String size;
-	
+	public String color;
+	public String image;
 	
 	public int getId() {
 		return id;
@@ -28,8 +29,14 @@ public class Animal {
 	public void setImage(String image) {
 		this.image = image;
 	}
+	
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
 
-	public String image;
 	
 	public String getSpecies() {
 		return species;
