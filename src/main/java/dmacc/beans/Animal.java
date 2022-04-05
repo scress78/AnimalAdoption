@@ -76,6 +76,19 @@ public class Animal {
 		this.size = size;
 	}
 	
+	
+	
+	public Animal(int id, String species, String name, String breed, String size, String color, String image) {
+		super();
+		this.id = id;
+		this.species = species;
+		this.name = name;
+		this.breed = breed;
+		this.size = size;
+		this.color = color;
+		this.image = image;
+	}
+	
 	@Override
 	public String toString() {
 		return "Animal [species=" + species + ", name=" + name + ", breed=" + breed + ", size=" + size + "]";
