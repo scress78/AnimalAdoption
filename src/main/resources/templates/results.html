@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Animals</title>
+</head>
+<body>
+<form>
+<table>
+<tr th:each="currentAnimal : ${animals}" >
+<td th:text="${currentAnimal.id}" />
+ <td th:text="${currentAnimal.species}" />
+ <td th:text="${currentAnimal.name}" />
+ <td th:text="${currentAnimal.breed}" />
+ <td th:text="${currentAnimal.size}" />
+ <td th:text="${currentAnimal.color}" />
+ <td th:text="${currentAnimal.image}" />
+</tr>
+</table>
+</form>
+<a href="../inputAnimal">Add a new animal</a>
+</body>
+</html>
