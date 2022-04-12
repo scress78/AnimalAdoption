@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class Animal {
 	@Id
 	@GeneratedValue
-	public int id;
+	public long id;
 	public String species;
 	public String name;
 	public String breed;
