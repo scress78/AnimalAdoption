@@ -6,6 +6,7 @@ import javax.persistence.Id;
 
 import lombok.Data;
 
+
 @Entity
 @Data
 public class Animal {
@@ -23,6 +24,7 @@ public class Animal {
 		super();
 	}
 	
+
 	public Animal(String species, String name, String breed, String size) {
 		super();
 		this.species = species;
