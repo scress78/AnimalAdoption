@@ -2,19 +2,27 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert New Animal</title>
+	<title>STAT Animal Adoption - Add an Animal</title>
+	<link rel="stylesheet" href="Formatting.css">
 </head>
 <body>
-<form th:object="${newAnimal}" th:action="@{/update/{id}(id=${newAnimal.id})}" method='POST'>
-	Species: <input name="species" size="20" th:field="*{species}"> <br />
-	Name: <input name="name" size="20" th:field="*{name}"><br />
-	Breed: <input name="breed" size="20" th:field="*{breed}"><br />
-	Size: <input name="size" size="20" th:field="*{size}"><br />
-	Color: <input name="color" size="20" th:field="*{color}"><br />
-	Image:<input name="image" size="20" th:field="*{image}"><br />
-	<input name="submit" type="submit" value="submit" />
-</form>
-<a href="viewAll">View all Animals</a>
-
+	<h1>STAT Animal Adoption</h1>
+	<h3>Add a new animal</h3>
+	<!-- This form is used to add the objects to the database -->
+	<form class="input" th:object="${newAnimal}" th:action="@{/update/{id}(id=${newAnimal.id})}" method='POST'>
+		<!-- The label tags help with some CSS stuff -->
+		<label>Species:</label> <input name="species" size="20" th:field="*{species}"> <br />
+		<label>Name:</label> <input name="name" size="20" th:field="*{name}"><br />
+		<label>Breed:</label> <input name="breed" size="20" th:field="*{breed}"><br />
+		<label>Size:</label> <input name="size" size="20" th:field="*{size}"><br />
+		<label>Color:</label> <input name="color" size="20" th:field="*{color}"><br />
+		<label>Image:</label><input name="image" size="20" th:field="*{image}"><br />
+		<!-- Submit button -->
+		<input name="submit" type="submit" value="submit" /><br />
+	</form>
+	<!-- View all animals from the database -->
+	<br />
+	<br />
+	<a href="viewAll">View all Animals</a>
 </body>
 </html>

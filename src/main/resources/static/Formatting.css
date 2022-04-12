@@ -1,0 +1,44 @@
+		input[type=submit] {
+			width: 150px;
+			background-color: #5fc97b;
+			color: white;
+			padding: 14px 20px;
+			margin: 25px;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+		
+		.input {
+			border: 2px solid;
+			margin: 10px;
+			padding: 10px;
+			border-radius: 5px;
+		}
+		
+		input {
+			margin: 5px;
+			padding: 5px;
+		}
+		
+		label{
+			display: inline-block;
+    		float: left;
+    		clear: left;
+    		width: 80px;
+    		text-align: right;
+		}
+		
+		body {
+			background-color: lightblue;
+		}
+		
+		a {
+			width: 150px;
+			background-color: #5388e6;
+			color: white;
+			padding: 14px 20px;
+			margin: 25px;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+	
