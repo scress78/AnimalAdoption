@@ -32,7 +32,7 @@ public class Animal {
 	
 	
 	
-	public Animal(int id, String species, String name, String breed, String size, String color, String image) {
+	public Animal(long id, String species, String name, String breed, String size, String color, String image) {
 		super();
 		this.id = id;
 		this.species = species;
