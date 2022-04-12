@@ -5,12 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
 
 @Entity
 @Data
-@NoArgsConstructor
 public class Animal {
 	@Id
 	@GeneratedValue
@@ -21,6 +18,10 @@ public class Animal {
 	public String size;
 	public String color;
 	public String image;
+	
+	public Animal() {
+		super();
+	}
 	
 	public Animal(String species, String name, String breed, String size) {
 		super();

@@ -12,5 +12,4 @@ public class BeanConfiguration {
 		Animal bean = new Animal();
 		return bean;
 	}
-
 }
