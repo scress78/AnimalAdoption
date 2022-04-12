@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Search</title>
+</head>
+<body>
+<form th:action="@{/searchSpecies}" method='GET'>
+	Species: <input name="species" size="20" > <br />
+	<input name="submit" type="submit" value="submit" />
+</form>
+<a href="viewAll">View all Animals</a>
+<a href="../searchSpecies">Search by species</a>
+</body>
+</html>
