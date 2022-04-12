@@ -2,12 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>View All Animals</title>
+<title>View Search</title>
 </head>
 <body>
 <form>
 <table>
-<tr th:each="currentAnimal : ${animals}" >
+<tr th:each="currentAnimal : ${animalsSearch}" >
 <td th:text="${currentAnimal.id}" />
  <td th:text="${currentAnimal.species}" />
  <td th:text="${currentAnimal.name}" />
