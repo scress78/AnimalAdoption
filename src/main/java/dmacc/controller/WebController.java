@@ -19,6 +19,7 @@ public class WebController {
 	@GetMapping("/viewAll")
 	public String viewAllAnimals(Model model) {
 		model.addAttribute("animals", repo.findAll());
+		System.out.println(repo.findAll());
 		return "results";
 	}
 	
@@ -54,5 +55,18 @@ public class WebController {
 		repo.delete(a);
 		return viewAllAnimals(model);
 	}
+	
+	@GetMapping("/searchSpecies")
+	public String searchSpecies(String species, Model model) {
+		model.addAttribute("animalsSearch", repo.findBySpecies(species));
+		System.out.println(repo.findBySpecies(species));
+		return "inputSearch";
+	}
+	/**
+	@PostMapping("/searchSpecies")
+	public String searchSpecies(String species, Model model) {
+		model.addAttribute("animalsSearch", repo.findBySpecies(species));
+		return "inputSearch";
+	}**/
 
 }

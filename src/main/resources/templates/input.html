@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="Formatting.css">
 </head>
 <body>
+
 	<h1>STAT Animal Adoption</h1>
 	<h3>Add a new animal</h3>
 	<!-- This form is used to add the objects to the database -->
@@ -24,5 +25,18 @@
 	<br />
 	<br />
 	<a href="viewAll">View all Animals</a>
+
+<form th:object="${newAnimal}" th:action="@{/update/{id}(id=${newAnimal.id})}" method='POST'>
+	Species: <input name="species" size="20" th:field="*{species}"> <br />
+	Name: <input name="name" size="20" th:field="*{name}"><br />
+	Breed: <input name="breed" size="20" th:field="*{breed}"><br />
+	Size: <input name="size" size="20" th:field="*{size}"><br />
+	Color: <input name="color" size="20" th:field="*{color}"><br />
+	Image:<input name="image" size="20" th:field="*{image}"><br />
+	<input name="submit" type="submit" value="submit" />
+</form>
+<a href="viewAll">View all Animals</a>
+<a href="../searchSpecies">Search by species</a>
+
 </body>
 </html>
