@@ -23,6 +23,7 @@ public class Animal {
 		super();
 	}
 	
+
 	public Animal(String species, String name, String breed, String size) {
 		super();
 		this.species = species;
