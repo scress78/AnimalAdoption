@@ -24,8 +24,7 @@
 	<!-- View all animals from the database -->
 	<br />
 	<br />
-	<a href="viewAll">View all Animals</a>
-
+<!--  
 <form th:object="${newAnimal}" th:action="@{/update/{id}(id=${newAnimal.id})}" method='POST'>
 	Species: <input name="species" size="20" th:field="*{species}"> <br />
 	Name: <input name="name" size="20" th:field="*{name}"><br />
@@ -34,9 +33,10 @@
 	Color: <input name="color" size="20" th:field="*{color}"><br />
 	Image:<input name="image" size="20" th:field="*{image}"><br />
 	<input name="submit" type="submit" value="submit" />
-</form>
+</form> -->
 <a href="viewAll">View all Animals</a>
-<a href="../searchSpecies">Search by species</a>
+<a href="../getSearchSpecies">Search by species</a>
+<a href="/index.html">Home</a>
 
 </body>
 </html>
