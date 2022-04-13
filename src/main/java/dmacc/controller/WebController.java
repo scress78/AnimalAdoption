@@ -9,18 +9,29 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import dmacc.beans.Animal;
+import dmacc.beans.User;
 import dmacc.repository.AnimalRepository;
+import dmacc.repository.UserRepository;
 
 @Controller
 public class WebController {
 	@Autowired
 	AnimalRepository repo;
 	
+	@Autowired
+	UserRepository uRepo;
+	
 	@GetMapping("/viewAll")
 	public String viewAllAnimals(Model model) {
 		model.addAttribute("animals", repo.findAll());
 		System.out.println(repo.findAll());
 		return "results";
+	}
+	
+	@GetMapping("/viewAllUsers")
+	public String viewAllUsers(Model model) {
+		model.addAttribute("users", uRepo.findAll());
+		return "allusers";
 	}
 	
 	@GetMapping("/inputAnimal")
@@ -36,6 +47,20 @@ public class WebController {
 		return viewAllAnimals(model);
 	}
 	
+	@GetMapping("/inputUser")
+	public String addNewUser(Model model) {
+		User u = new User();
+		model.addAttribute("newUser", u);
+		return "inputuser";
+	}
+	
+	@PostMapping("/inputUser")
+	public String addNewUser(@ModelAttribute User u, Model model) {
+		uRepo.save(u);
+		return viewAllUsers(model);
+	}
+	
+	
 	@GetMapping("/edit/{id}")
 	public String showUpdateAnimal(@PathVariable("id") long id, Model model) {
 		Animal a = repo.findById(id).orElse(null);
@@ -47,6 +72,12 @@ public class WebController {
 	public String reviseAnimal(Animal a, Model model) {
 		repo.save(a);
 		return viewAllAnimals(model);
+	}
+	
+	@PostMapping("/updateUser/{id}")
+	public String reviseUser(User u, Model model) {
+		uRepo.save(u);
+		return viewAllUsers(model);
 	}
 	
 	@GetMapping("/delete/{id}")

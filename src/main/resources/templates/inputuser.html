@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+	<title>STAT Animal Adoption - Create a User</title>
+	<link rel="stylesheet" href="Formatting.css">
+</head>
+<body>
+
+	<h1>STAT Animal Adoption</h1>
+	<h3>Create a New User</h3>
+	<!-- This form is used to add the objects to the database -->
+	<form class="inputUser" th:object="${newUser}" th:action="@{/updateUser/{id}(id=${newUser.id})}" method='POST'>
+		<!-- The label tags help with some CSS stuff -->
+		<label>Username:</label> <input name="username" size="20" th:field="*{userName}"> <br />
+		<label>Password:</label> <input name="password" size="20" th:field="*{password}"><br />
+		<!-- Submit button -->
+		<input name="submit" type="submit" value="submit" /><br />
+	</form>
+	<!-- View all animals from the database -->
+	<br />
+	<br />
+	<a href="viewAll">View all Animals</a>
+
+</body>
+</html>

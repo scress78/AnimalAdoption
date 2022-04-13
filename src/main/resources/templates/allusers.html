@@ -8,25 +8,23 @@
 <body>
 
 	<h1>STAT Animal Adoption</h1>
-	<h3>View all animals</h3>
+	<h3>View All Users</h3>
 	<form>
 		<table>
-			<tr th:each="currentAnimal : ${animals}" >
-			<td th:text="${currentAnimal.id}" />
-			<td th:text="${currentAnimal.species}" />
-			<td th:text="${currentAnimal.name}" />
-			<td th:text="${currentAnimal.breed}" />
-			<td th:text="${currentAnimal.size}" />
-			<td th:text="${currentAnimal.color}" />
-			<td th:text="${currentAnimal.image}" />
-			<td><a th:href="@{/edit/{id}(id=${currentAnimal.id})}">Edit</a></td>
-			<td><a th:href="@{/delete/{id}(id=${currentAnimal.id})}">Delete</a></td>
+			<tr th:each="currentUser : ${users}" >
+			<td th:text="${currentUser.id}" />
+			<td th:text="${currentUser.userName}" />
+			<td th:text="${currentUser.password}" />
+			<td><a th:href="@{/edit/{id}(id=${currentUser.id})}">Edit</a></td>
+			<td><a th:href="@{/delete/{id}(id=${currentUser.id})}">Delete</a></td>
 			</tr>
 		</table>
 	</form>
 	<a href="../inputAnimal">Add a new animal</a>
 	
+<!-- 
 <form>
+
 <table>
 <tr th:each="currentAnimal : ${animals}" >
 <td th:text="${currentAnimal.id}" />
@@ -42,6 +40,7 @@
 </tr>
 </table>
 </form>
+ -->
 <a href="../inputAnimal">Add a new animal</a>
 <a href="../searchSpecies">Search by species</a>
 <a href="/index.html">Home</a>
