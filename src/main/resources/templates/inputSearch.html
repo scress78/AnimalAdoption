@@ -5,11 +5,11 @@
 <title>Search</title>
 </head>
 <body>
-<form th:action="@{/searchSpecies}" method='GET'>
+<form th:action="@{/searchSpecies}" method='POST' action="inputResults.html">
 	Species: <input name="species" size="20" > <br />
 	<input name="submit" type="submit" value="submit" />
 </form>
 <a href="viewAll">View all Animals</a>
-<a href="../searchSpecies">Search by species</a>
+<a href="../getSearchSpecies">Search by species</a>
 </body>
 </html>
