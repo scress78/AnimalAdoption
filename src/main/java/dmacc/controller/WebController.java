@@ -105,17 +105,6 @@ public class WebController {
 		return viewAllAnimals(model);
 	}
 	
-<<<<<<< HEAD
-	@GetMapping("/searchSpecies")
-	public String searchSpecies(String species, Model model) {
-		model.addAttribute("animalsSearch", repo.findBySpecies(species));
-		System.out.println(repo.findBySpecies(species));
-		return "inputSearch";
-	}
-	
-	/**
-=======
->>>>>>> 3fdda8c5846118f3db97a940e8f8929cd5ca2369
 	@PostMapping("/searchSpecies")
 	public String searchSpecies(String species, Model model) {
 		model.addAttribute("animalsSearch", repo.findBySpecies(species));
