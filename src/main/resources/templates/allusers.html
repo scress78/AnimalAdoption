@@ -14,13 +14,13 @@
 			<tr th:each="currentUser : ${users}" >
 			<td th:text="${currentUser.userName}" />
 			<td th:text="${currentUser.password}" />
-			<td><a th:href="@{/edit/{id}(id=${currentUser.id})}">Edit</a></td>
-			<td><a th:href="@{/delete/{id}(id=${currentUser.id})}">Delete</a></td>
+			<td><a th:href="@{/edituser/{id}(id=${currentUser.id})}">Edit</a></td>
+			<td><a th:href="@{/deleteuser/{id}(id=${currentUser.id})}">Delete</a></td>
 			</tr>
 		</table>
 	</form>
 	<a href="../inputAnimal">Add a new animal</a>
-	<a href="../inputAnimal">Add a new animal</a>
+	<a href="../inputUser">Add a new user</a>
 	<a href="../searchSpecies">Search by species</a>
 	<a href="/index.html">Home</a>
 </body>
