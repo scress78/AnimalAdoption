@@ -2,25 +2,34 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>View Search</title>
+	<title>STAT Animal Adoption - View Search</title>
+	<link rel="stylesheet" href="Formatting.css">
 </head>
 <body>
-<form>
-<table>
-<tr th:each="currentAnimal : ${animalsSearch}" >
-<td th:text="${currentAnimal.id}" />
- <td th:text="${currentAnimal.species}" />
- <td th:text="${currentAnimal.name}" />
- <td th:text="${currentAnimal.breed}" />
- <td th:text="${currentAnimal.size}" />
- <td th:text="${currentAnimal.color}" />
- <td th:text="${currentAnimal.image}" />
- <td><a th:href="@{/edit/{id}(id=${currentAnimal.id})}">Edit</a></td>
- <td><a th:href="@{/delete/{id}(id=${currentAnimal.id})}">Delete</a></td>
-</tr>
-</table>
-</form>
-<a href="../inputAnimal">Add a new animal</a>
-<a href="../searchSpecies">Search by species</a>
+	<form>
+		<table>
+			<tr>
+				<th>Species</th>
+				<th>Name</th>
+				<th>Breed</th>
+				<th>Size</th>
+				<th>Color</th>
+				<th>Image (if available)</th>
+			</tr>
+			<tr th:each="currentAnimal : ${animalsSearch}" >
+				<td th:text="${currentAnimal.species}" />
+				<td th:text="${currentAnimal.name}" />
+				<td th:text="${currentAnimal.breed}" />
+				<td th:text="${currentAnimal.size}" />
+				<td th:text="${currentAnimal.color}" />
+				<td th:text="${currentAnimal.image}" />
+				<td><a th:href="@{/edit/{id}(id=${currentAnimal.id})}">Edit</a></td>
+				<td><a th:href="@{/delete/{id}(id=${currentAnimal.id})}">Delete</a></td>
+			</tr>
+		</table>
+	</form>
+	<a href="../inputAnimal">Add a new animal</a>
+	<a href="../getSearchSpecies">Search by species</a>
+	<a href="/index.html">Home</a>
 </body>
 </html>
