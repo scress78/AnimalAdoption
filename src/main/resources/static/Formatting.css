@@ -30,6 +30,7 @@
 		
 		body {
 			background-color: lightblue;
+			line-height: 3em;
 		}
 		
 		a {
@@ -41,4 +42,11 @@
 			border-radius: 4px;
 			cursor: pointer;
 		}
-	
+		
+		td {
+			padding-right: 5em;
+		}
+		
+		th {
+			padding-right: 5em;
+		}
