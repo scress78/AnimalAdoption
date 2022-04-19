@@ -6,12 +6,15 @@
 	<link rel="stylesheet" href="Formatting.css">
 </head>
 <body>
+	<!-- This form used to query the database for matching animals -->
 	<form th:action="@{/searchSpecies}" method='POST' action="inputResults.html">
-	Species: <input name="species" size="20" > <br />
-	<input name="submit" type="submit" value="submit" />
+		Species: <input name="species" size="20" > <br />
+		<!-- Takes input and submits for query -->
+		<input name="submit" type="submit" value="submit" />
 	</form>
+	<!-- Navigation -->
 	<a href="viewAll">View all Animals</a>
 	<a href="../getSearchSpecies">Search by species</a>
-	<a href="/index.html">Home</a>
+	<a class="home" href="/index.html">Home</a>
 </body>
 </html>

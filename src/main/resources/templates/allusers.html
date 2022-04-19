@@ -10,18 +10,25 @@
 	<h3>View All Users</h3>
 	<form>
 		<table>
-		
+			<tr>
+				<!-- Headers -->
+				<th>Username</th>
+				<th>Password</th>
+			</tr>
+			<!-- Output each set of info -->
 			<tr th:each="currentUser : ${users}" >
-			<td th:text="${currentUser.userName}" />
-			<td th:text="${currentUser.password}" />
-			<td><a th:href="@{/edituser/{id}(id=${currentUser.id})}">Edit</a></td>
-			<td><a th:href="@{/deleteuser/{id}(id=${currentUser.id})}">Delete</a></td>
+				<td th:text="${currentUser.userName}" />
+				<td th:text="${currentUser.password}" />
+				<!-- Edit and Delete buttons -->
+				<td><a th:href="@{/edit/{id}(id=${currentUser.id})}">Edit</a></td>
+				<td><a th:href="@{/delete/{id}(id=${currentUser.id})}">Delete</a></td>
 			</tr>
 		</table>
 	</form>
+	<!-- Navigation -->
 	<a href="../inputAnimal">Add a new animal</a>
 	<a href="../inputUser">Add a new user</a>
 	<a href="../searchSpecies">Search by species</a>
-	<a href="/index.html">Home</a>
+	<a class="home" href="/index.html">Return Home</a>
 </body>
 </html>
