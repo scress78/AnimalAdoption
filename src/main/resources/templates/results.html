@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 	<title>STAT Animal Adoption - View All</title>
-		<link rel="stylesheet" href="Formatting.css">
+		<link rel="stylesheet" href="/Formatting.css">
 </head>
 <body>
 	<h1>STAT Animal Adoption</h1>
@@ -31,6 +31,7 @@
 			<!-- Edit and delete buttons -->
 			<td><a th:href="@{/edit/{id}(id=${currentAnimal.id})}">Edit</a></td>
 			<td><a th:href="@{/delete/{id}(id=${currentAnimal.id})}">Delete</a></td>
+			<td><a th:href="@{/addfavorite/{id}(id=${currentAnimal.id})}">Add Animal to Favorites</a></td>
 			</tr>
 		</table>
 	</form>
