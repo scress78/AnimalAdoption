@@ -1,5 +1,8 @@
 package dmacc.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -68,6 +71,21 @@ public class WebController {
 		return "input";
 	}
 	
+	
+	@GetMapping("/addfavorite/{id}")
+	public String addFavoriteAnimal(@PathVariable("id") long id, Model model) {
+		Animal a = repo.findById(id).orElse(null);
+		User u = new User();
+		// above should grab username as well, how do we do this??
+		// need favorites page for users.. I guess we kind of have it with all users
+		List <Animal> favorites = u.getFavorites();
+		favorites.add(a);
+		u.setFavorites(favorites);
+		uRepo.save(u);
+		return "results";
+	}
+	
+	
 	@PostMapping("/update/{id}")
 	public String reviseAnimal(Animal a, Model model) {
 		repo.save(a);
@@ -93,6 +111,7 @@ public class WebController {
 		System.out.println(repo.findBySpecies(species));
 		return "inputSearch";
 	}
+	
 	/**
 	@PostMapping("/searchSpecies")
 	public String searchSpecies(String species, Model model) {

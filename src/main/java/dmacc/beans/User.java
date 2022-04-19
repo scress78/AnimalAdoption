@@ -2,10 +2,14 @@ package dmacc.beans;
 
 import java.util.List;
 
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
+import javax.persistence.OneToMany;
 
 import lombok.Data;
 
@@ -17,9 +21,27 @@ public class User {
 	public long id;
 	private String userName;
 	private String password;
-	//private List<Animal> favorites;
 	
 	
+	@OneToMany
+	private List<Animal> favorites;
+	
+	
+	
+	
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", userName=" + userName + ", password=" + password + ", favorites=" + favorites
+				+ "]";
+	}
+	
+	/*
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", userName=" + userName + ", password=" + password+ "]";
+	}
+	*/
+
 	public long getId() {
 		return id;
 	}
@@ -49,7 +71,8 @@ public class User {
 		this.password = password;
 	}
 
-	/*
+	
+	
 	public List<Animal> getFavorites() {
 		return favorites;
 	}
@@ -58,8 +81,8 @@ public class User {
 	public void setFavorites(List<Animal> favorites) {
 		this.favorites = favorites;
 	}
-
-	*/
+	
+	
 
 	public User() {
 		super();
