@@ -71,6 +71,13 @@ public class WebController {
 		return "input";
 	}
 	
+	@GetMapping("/edituser/{id}")
+	public String showUpdateUser(@PathVariable("id") long id, Model model) {
+		User u = uRepo.findById(id).orElse(null);
+		model.addAttribute("newUser", u);
+		return "inputuser";
+	}
+	
 	
 	@GetMapping("/addfavorite/{id}")
 	public String addFavoriteAnimal(@PathVariable("id") long id, Model model) {
@@ -103,6 +110,13 @@ public class WebController {
 		Animal a = repo.findById(id).orElse(null);
 		repo.delete(a);
 		return viewAllAnimals(model);
+	}
+	
+	@GetMapping("/deleteuser/{id}")
+	public String deleteUser(@PathVariable("id") long id, Model model) {
+		User u = uRepo.findById(id).orElse(null);
+		uRepo.delete(u);
+		return viewAllUsers(model);
 	}
 	
 	@PostMapping("/searchSpecies")
