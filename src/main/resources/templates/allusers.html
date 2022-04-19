@@ -20,8 +20,8 @@
 				<td th:text="${currentUser.userName}" />
 				<td th:text="${currentUser.password}" />
 				<!-- Edit and Delete buttons -->
-				<td><a th:href="@{/edit/{id}(id=${currentUser.id})}">Edit</a></td>
-				<td><a th:href="@{/delete/{id}(id=${currentUser.id})}">Delete</a></td>
+				<td><a th:href="@{/edituser/{id}(id=${currentUser.id})}">Edit</a></td>
+				<td><a th:href="@{/deleteuser/{id}(id=${currentUser.id})}">Delete</a></td>
 			</tr>
 		</table>
 	</form>
