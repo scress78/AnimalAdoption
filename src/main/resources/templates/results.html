@@ -8,9 +8,11 @@
 <body>
 	<h1>STAT Animal Adoption</h1>
 	<h3>View all animals</h3>
+	<!-- This form is used to view all animals, as well as edit or delete them -->
 	<form>
 		<table>
 			<tr>
+				<!-- Headers -->
 				<th>Species</th>
 				<th>Name</th>
 				<th>Breed</th>
@@ -18,6 +20,7 @@
 				<th>Color</th>
 				<th>Image (if available)</th>
 			</tr>
+			<!-- Output each -->
 			<tr th:each="currentAnimal : ${animals}" >
 			<td th:text="${currentAnimal.species}" />
 			<td th:text="${currentAnimal.name}" />
@@ -25,15 +28,17 @@
 			<td th:text="${currentAnimal.size}" />
 			<td th:text="${currentAnimal.color}" />
 			<td th:text="${currentAnimal.image}" />
+			<!-- Edit and delete buttons -->
 			<td><a th:href="@{/edit/{id}(id=${currentAnimal.id})}">Edit</a></td>
 			<td><a th:href="@{/delete/{id}(id=${currentAnimal.id})}">Delete</a></td>
 			</tr>
 		</table>
 	</form>
 	<div>
+		<!-- Navigation -->
 		<a href="../inputAnimal">Add a new animal</a>
 		<a href="../getSearchSpecies">Search by species</a>
-		<a href="/index.html">Home</a>
+		<a class="home" href="/index.html">Return Home</a>
 	</div>
 </body>
 </html>
