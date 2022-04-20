@@ -118,7 +118,7 @@ public class WebController {
 		uRepo.delete(u);
 		return viewAllUsers(model);
 	}
-	
+	/**
 	@PostMapping("/searchSpecies")
 	public String searchSpecies(String species, Model model) {
 		model.addAttribute("animalsSearch", repo.findBySpecies(species));
@@ -128,6 +128,19 @@ public class WebController {
 
 	@GetMapping("/getSearchSpecies")
 	public String getSearchSpecies(String species, Model model) {
+		return "inputSearch";
+	}**/
+	
+	//Allows you to search all animals by a given keyword
+	@PostMapping("/search")
+	public String search(String keyword, Model model) {
+		model.addAttribute("animalsSearch", repo.searchAnimal(keyword));
+		System.out.println(repo.searchAnimal(keyword));
+		return "resultsSearch";
+	}
+
+	@GetMapping("/getSearch")
+	public String getSearch(String keyword, Model model) {
 		return "inputSearch";
 	}
 
