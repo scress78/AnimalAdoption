@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+	<title>STAT Animal Adoption - View All</title>
+	<link rel="stylesheet" href="/Formatting.css">
+</head>
+<body>
+	<form>
+		<table>
+			<tr>
+				<!-- Headers -->
+				<th>Species</th>
+				<th>Name</th>
+				<th>Breed</th>
+				<th>Size</th>
+				<th>Color</th>
+				<th>Image (if available)</th>
+			</tr>
+			<tr th:each="currentAnimal : ${currentUser.favorites}" >
+				<td th:text="${currentAnimal.species}" />
+				<td th:text="${currentAnimal.name}" />
+				<td th:text="${currentAnimal.breed}" />
+				<td th:text="${currentAnimal.size}" />
+				<td th:text="${currentAnimal.color}" />
+				<td th:text="${currentAnimal.image}" />
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
