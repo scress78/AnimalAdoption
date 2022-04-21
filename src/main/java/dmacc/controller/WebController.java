@@ -78,20 +78,35 @@ public class WebController {
 		return "inputuser";
 	}
 	
+	@GetMapping("/displayuser/{id}")
+	public String showUserFavorites(@PathVariable("id") long id, Model model) {
+		User u = uRepo.findById(id).orElse(null);
+		model.addAttribute("currentUser", u);
+		return "currentuser";
+	}
 	
 	@GetMapping("/addfavorite/{id}")
-	public String addFavoriteAnimal(@PathVariable("id") long id, Model model) {
+	public String selectFavoriteAnimal(@PathVariable("id") long id, Model model) {
+		User u = uRepo.findById(id).orElse(null);
+		// above should grab username as well, how do we do this??
+		// need favorites page for users.. I guess we kind of have it with all users
+		model.addAttribute("currentUser", u);
+		model.addAttribute("animals", repo.findAll());
+		return "addfavoriteanimal";
+	}
+	
+	@GetMapping("/addfavoritetolist/{id}/{userId}")
+	public String addFavoriteAnimal(@PathVariable("id") long id, @PathVariable("userId") long userId, Model model) {
 		Animal a = repo.findById(id).orElse(null);
-		User u = new User();
+		User u = uRepo.findById(userId).orElse(null);
 		// above should grab username as well, how do we do this??
 		// need favorites page for users.. I guess we kind of have it with all users
 		List <Animal> favorites = u.getFavorites();
 		favorites.add(a);
 		u.setFavorites(favorites);
 		uRepo.save(u);
-		return "results";
+		return "currentuser";
 	}
-	
 	
 	@PostMapping("/update/{id}")
 	public String reviseAnimal(Animal a, Model model) {

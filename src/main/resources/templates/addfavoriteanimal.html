@@ -7,8 +7,9 @@
 </head>
 <body>
 	<h1>STAT Animal Adoption</h1>
+	<p>Current user: <strong th:text="${currentUser.userName}"></strong></p>
 	<h3>View all animals</h3>
-	<!-- This form is used to view all animals, as well as edit or delete them -->
+	<!-- This form is used to view all animals to add a favorite -->
 	<form>
 		<table>
 			<tr>
@@ -28,16 +29,13 @@
 			<td th:text="${currentAnimal.size}" />
 			<td th:text="${currentAnimal.color}" />
 			<td th:text="${currentAnimal.image}" />
-			<!-- Edit and delete buttons -->
-			<td><a th:href="@{/edit/{id}(id=${currentAnimal.id})}">Edit</a></td>
-			<td><a th:href="@{/delete/{id}(id=${currentAnimal.id})}">Delete</a></td>
+			<!-- Add favorite button -->
+			<td><a th:href="@{/addfavoritetolist/{id}/{userId} (id=${currentAnimal.id}, userId=${currentUser.id})}">Add Animal to Favorites</a></td>
 			</tr>
 		</table>
 	</form>
 	<div>
 		<!-- Navigation -->
-		<a href="../inputAnimal">Add a new animal</a>
-		<a href="../getSearch">Search by keyword</a>
 		<a class="home" href="/index.html">Return Home</a>
 	</div>
 </body>

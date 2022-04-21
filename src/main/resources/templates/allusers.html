@@ -20,6 +20,8 @@
 				<td th:text="${currentUser.userName}" />
 				<td th:text="${currentUser.password}" />
 				<!-- Edit and Delete buttons -->
+				<td><a th:href="@{/addfavorite/{id}(id=${currentUser.id})}">Add Animal to Favorites</a></td>
+				<td><a th:href="@{/displayuser/{id}(id=${currentUser.id})}">Display User Favorites</a>
 				<td><a th:href="@{/edituser/{id}(id=${currentUser.id})}">Edit</a></td>
 				<td><a th:href="@{/deleteuser/{id}(id=${currentUser.id})}">Delete</a></td>
 			</tr>
