@@ -21,12 +21,11 @@ public class User {
 	public long id;
 	private String userName;
 	private String password;
-	
-	
+	private boolean loggedIn;
+
 	@OneToMany
 	private List<Animal> favorites;
-	
-	
+
 	
 	
 	@Override
@@ -80,6 +79,39 @@ public class User {
 
 	public void setFavorites(List<Animal> favorites) {
 		this.favorites = favorites;
+	}
+	
+	public boolean isLoggedIn() {
+		return loggedIn;
+	}
+
+	public void setLoggedIn(boolean loggedIn) {
+		this.loggedIn = loggedIn;
+	}
+	
+	public String logOut() {
+		if(isLoggedIn() == false) {
+			return "User already logged out";
+		}
+		else {
+			loggedIn = false;
+			return "User logged out";
+		}
+	}
+	
+	public String logIn(String password) {
+		if(isLoggedIn() == false) {
+			if(password == getPassword()) {
+				loggedIn = true;
+			return "User has been logged in!";
+			}
+			else {
+				return "Incorrect password!";
+			}
+		}
+		else {
+			return "User already logged in!";
+		}
 	}
 	
 	
