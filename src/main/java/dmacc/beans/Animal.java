@@ -27,7 +27,7 @@ public class Animal {
 				+ ", color=" + color + ", image=" + image + "]";
 	}
 
-
+	/**
 	public long getId() {
 		return id;
 	}
@@ -96,7 +96,7 @@ public class Animal {
 	public void setImage(String image) {
 		this.image = image;
 	}
-
+	**/
 
 	public Animal() {
 		super();

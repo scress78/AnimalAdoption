@@ -3,11 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <title>Search</title>
+<script type = "text/javascript">
+
+		function validate() {
+			if(document.form.keyword.value == ""){
+				alert("Please enter a keyword!");
+				document.form.keyword.focus();
+				return false;
+			} else {
+				return (true);
+			}
+
+		
+	}
+</script>
 	<link rel="stylesheet" href="/Formatting.css">
 </head>
 <body>
 	<!-- This form used to query the database for matching animals -->
-	<form th:action="@{/search}" method='POST' action="inputResults.html">
+	<form name= "form" th:action="@{/search}" method='POST' action="inputResults.html" onsubmit= return(validate())>
 		Keyword: <input name="keyword" size="20" > <br />
 		<!-- Takes input and submits for query -->
 		<input name="submit" type="submit" value="submit" />
@@ -16,5 +30,6 @@
 	<a href="viewAll">View all Animals</a>
 	<a href="../getSearch">Search by keyword</a>
 	<a class="home" href="/index.html">Home</a>
+	<p>All searches that come up empty will automatically be redirected to this page again.</p>
 </body>
 </html>
