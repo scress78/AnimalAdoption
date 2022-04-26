@@ -149,7 +149,12 @@ public class WebController {
 	//Allows you to search all animals by a given keyword
 	@PostMapping("/search")
 	public String search(String keyword, Model model) {
-		model.addAttribute("animalsSearch", repo.searchAnimal(keyword));
+		List<Animal> a = repo.searchAnimal(keyword);
+		model.addAttribute("animalsSearch", a);
+		if (a.isEmpty()) {
+			System.out.println("Search returned nothing.");
+			return "inputSearch";
+		}
 		System.out.println(repo.searchAnimal(keyword));
 		return "resultsSearch";
 	}

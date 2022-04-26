@@ -40,7 +40,7 @@ public class User {
 		return "User [id=" + id + ", userName=" + userName + ", password=" + password+ "]";
 	}
 	*/
-
+	/**
 	public long getId() {
 		return id;
 	}
@@ -88,7 +88,7 @@ public class User {
 	public void setLoggedIn(boolean loggedIn) {
 		this.loggedIn = loggedIn;
 	}
-	
+	**/
 	public String logOut() {
 		if(isLoggedIn() == false) {
 			return "User already logged out";
