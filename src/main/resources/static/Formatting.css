@@ -33,14 +33,10 @@
 			line-height: 3em;
 		}
 		
-		a {
-			width: 150px;
-			background-color: #5388e6;
-			color: white;
-			padding: 14px 20px;
-			margin: 25px;
-			border-radius: 4px;
-			cursor: pointer;
+		table, th, td {
+			margin-left: auto;
+			margin-right: auto;
+			border: 2px double;
 		}
 		
 		td {
@@ -49,8 +45,131 @@
 		
 		th {
 			padding-right: 5em;
+			background-color: #131c4d;
+			color: white;
 		}
 		
 		.home{
 			background-color: #eb4646;
+		}
+		
+		a{
+			color: white;
+		}
+		
+		a:hover{
+			background-color: #3e8e41;
+		}
+
+		header {
+			font-family: Andale Mono,AndaleMono,monospace; 
+			color: white;
+			background-color: #3e448a;
+			padding: 3%;
+			text-align: center;
+			font-size: 45px;
+		}
+		
+		nav {
+			text-align: center;
+			padding: 25px;
+		}
+		
+		nav a {
+			font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  			background-color: #04AA6D;
+  			color: white;
+  			padding: 18px;
+  			font-size: 16px;
+  			border: none;
+  			text-decoration: none;
+		}
+		
+		footer {
+			color: white;
+			background-color: #131c4d;
+			padding: 1%;
+			font-size: 15px;
+		}
+		
+		footer a{
+			margin-left: 20px;
+		}
+		
+		footer a:hover{
+			background-color: #a3d6b5;
+		}
+		
+		footer a:link{
+			text-decoration: none;
+		}
+		
+		button {
+			background-color: #04AA6D;
+  			color: white;
+  			padding: 16px;
+  			font-size: 16px;
+  			border: none;
+		}
+		
+		.dropbtn {
+  			background-color: #04AA6D;
+  			color: white;
+  			padding: 16px;
+  			font-size: 16px;
+  			border: none;
+		}
+
+		.dropdown {
+  			position: relative;
+  			display: inline-block;
+		}
+
+		.dropdown-content {
+  			display: none;
+  			position: absolute;
+  			background-color: #f1f1f1;
+  			min-width: 160px;
+  			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  			z-index: 1;
+		}
+
+		.dropdown-content a {
+  			color: white;
+  			padding: 12px 16px;
+  			text-decoration: none;
+  			display: block;
+		}
+
+		.dropdown-content a:hover {
+			background-color: #759174;
+			}
+
+		.dropdown:hover .dropdown-content {
+			display: block;
+		}
+
+		.dropdown:hover .dropbtn {
+			background-color: #3e8e41;
+		}
+		
+		.box{
+			float: left;
+			padding: 15px;
+		}
+		
+		.adopt {
+			background-color: #eb4646
+		}
+		
+		.edit {
+			background-color: #3e448a
+		}
+		
+		.delete{
+			background-color: #eb4646
+		}
+		
+		.fave {
+			background-color: #04AA6D;
 		}
