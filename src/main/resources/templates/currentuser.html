@@ -24,8 +24,15 @@
 				<td th:text="${currentAnimal.size}" />
 				<td th:text="${currentAnimal.color}" />
 				<td th:text="${currentAnimal.image}" />
+				<td><a th:href="@{/deletefavorite/{id}/{userId} (id=${currentAnimal.id}, userId=${currentUser.id})}">Delete Favorite</a></td>
 			</tr>
 		</table>
 	</form>
+	<div>
+		<!-- Navigation -->
+		<a th:href="@{/addfavorite/{id}(id=${currentUser.id})}">Add Animal to Favorites</a>
+		<a href="/viewAllUsers">View all Users</a>
+		<a class="home" href="/index.html">Return Home</a>
+	</div>
 </body>
 </html>
