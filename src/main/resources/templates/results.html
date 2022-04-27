@@ -6,9 +6,32 @@
 		<link rel="stylesheet" href="/Formatting.css">
 </head>
 <body>
-	<h1>STAT Animal Adoption</h1>
-	<h3>View all animals</h3>
-	<!-- This form is used to view all animals, as well as edit or delete them -->
+	<!-- Header -->
+	<header>
+		<a href="index.html">
+			<img class="box" src="https://static.wikia.nocookie.net/sims/images/b/b5/TS4_Cats_and_Dogs_Icon.png/">
+		</a>
+		<h1>Team STAT Animal Adoption</h1>
+		<b>Your source for friends furred, scaled, and feathery!</b>
+	</header>
+	<!-- Navigation -->
+	<nav>
+		<div class="dropdown">
+			<button class="dropbtn">Find a Pet</button>
+			<div class="dropdown-content">
+				<a href="viewAll">View all Animals</a>
+				<a href="getSearch">Search Animals by keyword</a>
+			</div>
+		</div>
+		<a class="adopt" href="inputAnimal">Put up for Adoption</a>
+		<div class="dropdown">
+			<button class="dropbtn">Get Involved</button>
+			<div class="dropdown-content">
+				<a href="inputUser">Become a volunteer</a>
+				<a href="viewAllUsers">See all volunteers</a>
+			</div>
+		</div>
+	</nav>
 	<form>
 		<table>
 			<tr>
@@ -29,16 +52,20 @@
 			<td th:text="${currentAnimal.color}" />
 			<td th:text="${currentAnimal.image}" />
 			<!-- Edit and delete buttons -->
-			<td><a th:href="@{/edit/{id}(id=${currentAnimal.id})}">Edit</a></td>
-			<td><a th:href="@{/delete/{id}(id=${currentAnimal.id})}">Delete</a></td>
+			<td class="edit"><a th:href="@{/edit/{id}(id=${currentAnimal.id})}">Edit</a></td>
+			<td class="delete"><a th:href="@{/delete/{id}(id=${currentAnimal.id})}">Delete</a></td>
 			</tr>
 		</table>
 	</form>
-	<div>
-		<!-- Navigation -->
-		<a href="../inputAnimal">Add a new animal</a>
-		<a href="../getSearch">Search by keyword</a>
-		<a class="home" href="/index.html">Return Home</a>
-	</div>
+	<p>
+	<footer>
+		Navigation
+		<br /><a href="../index.html">Home</a>
+		<br /><a href="../viewAll">View all Animals</a>
+		<br /><a href="../inputAnimal">Add a new animal</a>
+		<br /><a href="../getSearch">Search by keyword</a>
+		<br /><a href="../viewAllUsers">View all Users</a>
+		<br /><a href="../inputUser">Create New User Profile</a>
+	</footer>
 </body>
 </html>
