@@ -143,6 +143,20 @@ public class WebController {
 	@GetMapping("/delete/{id}")
 	public String deleteAnimal(@PathVariable("id") long id, Model model) {
 		Animal a = repo.findById(id).orElse(null);
+		List<User> users = uRepo.findAll();
+		for (User u : users) {
+			List<Animal> favorites = u.getFavorites();
+			int indexToDelete = -1;
+			for (int i = 0; i < favorites.size(); i++) {
+				if (favorites.get(i).getId() == id) {
+					indexToDelete = i;
+				}
+			}
+			if (indexToDelete != -1) {
+				favorites.remove(indexToDelete);
+				u.setFavorites(favorites);
+			}
+		}
 		repo.delete(a);
 		return viewAllAnimals(model);
 	}
