@@ -109,6 +109,23 @@ public class WebController {
 		return "currentuser";
 	}
 	
+	@GetMapping("/deletefavorite/{id}/{userId}")
+	public String deleteFavorite(@PathVariable("id") long id, @PathVariable("userId") long userId, Model model) {
+		User u = uRepo.findById(userId).orElse(null);
+		List<Animal> favorites = u.getFavorites();
+		int indexToDelete = 0;
+		for (int i = 0; i < favorites.size(); i++) {
+			if (favorites.get(i).getId() == id) {
+				indexToDelete = i;
+			}
+		}
+		favorites.remove(indexToDelete);
+		u.setFavorites(favorites);
+		uRepo.save(u);
+		model.addAttribute("currentUser", u);
+		return "currentuser";
+	}
+	
 	@PostMapping("/update/{id}")
 	public String reviseAnimal(Animal a, Model model) {
 		repo.save(a);
