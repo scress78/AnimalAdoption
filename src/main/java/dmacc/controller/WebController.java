@@ -105,6 +105,7 @@ public class WebController {
 		favorites.add(a);
 		u.setFavorites(favorites);
 		uRepo.save(u);
+		model.addAttribute("currentUser", u);
 		return "currentuser";
 	}
 	
