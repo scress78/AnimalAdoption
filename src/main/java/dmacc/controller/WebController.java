@@ -102,7 +102,9 @@ public class WebController {
 		// above should grab username as well, how do we do this??
 		// need favorites page for users.. I guess we kind of have it with all users
 		List <Animal> favorites = u.getFavorites();
-		favorites.add(a);
+		if(!favorites.contains(a)) {
+			favorites.add(a);
+		}
 		u.setFavorites(favorites);
 		uRepo.save(u);
 		model.addAttribute("currentUser", u);
