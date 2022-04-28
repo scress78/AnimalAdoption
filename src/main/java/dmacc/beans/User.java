@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 import lombok.Data;
@@ -23,7 +24,7 @@ public class User {
 	private String password;
 	private boolean loggedIn;
 
-	@OneToMany
+	@ManyToMany
 	private List<Animal> favorites;
 
 	
